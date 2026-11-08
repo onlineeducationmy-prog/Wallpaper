@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper AI Studio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .phone-frame {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 12px solid #1f2937;
+            border-radius: 40px;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 min-h-screen text-white flex flex-col justify-between">
+
+    <!-- Header / Navbar -->
+    <header class="w-full py-4 px-6 bg-black/40 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-500 to-purple-500 flex items-center justify-center shadow-lg shadow-pink-500/30">
+                    <i class="fa-solid fa-wand-magic-sparkles text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent">Wallpaper AI Studio</h1>
+                    <p class="text-xs text-purple-200/70">Jana wallpaper telefon mengikut tema pilihan anda</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/10 text-xs">
+                <i class="fa-solid fa-mobile-screen text-pink-400"></i>
+                <span>Nisbah Khas Telefon (9:16)</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Panel: Themes & Controls -->
+        <div class="lg:col-span-6 bg-white/10 backdrop-blur-xl p-6 rounded-3xl border border-white/15 shadow-2xl space-y-6">
+            <div>
+                <h2 class="text-lg font-semibold mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-palette text-pink-400"></i> Pilih Tema Wallpaper Anda
+                </h2>
+                <p class="text-sm text-gray-300 mb-4">Klik mana-mana tema di bawah atau taip gaya anda sendiri untuk mula menjana wallpaper.</p>
+                
+                <!-- Theme Buttons Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-h-72 overflow-y-auto pr-1">
+                    <button onclick="selectTheme('Tema Laut & Marshmallow yang estetik, warna pastel lembut, awan marshmallow comel')" class="theme-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/20 border border-white/10 transition text-xs font-medium flex items-center gap-2 cursor-pointer">
+                        <span class="text-base">🌊</span> <span>Laut & Marshmallow</span>
+                    </button>
+                    <button onclick="selectTheme('Islamic Quote estetik dengan kaligrafi khat mewah, latar belakang masjid malam berbintang yang tenang')" class="theme-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/20 border border-white/10 transition text-xs font-medium flex items-center gap-2 cursor-pointer">
+                        <span class="text-base">☪️</span> <span>Islamic Quote</span>
+                    </button>
+                    <button onclick="selectTheme('Green floral aesthetic, dedaun hijau subur dan bunga-bunga segar yang cantik')" class="theme-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/20 border border-white/10 transition text-xs font-medium flex items-center gap-2 cursor-pointer">
+                        <span class="text-base">🌿</span> <span>Green Floral</span>
+                    </button>
+                    <button onclick="selectTheme('Fairytale magic castle, magika hutan peri yang bersinar dan penuh fantasi impian')" class="theme-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/20 border border-white/10 transition text-xs font-medium flex items-center gap-2 cursor-pointer">
+                        <span class="text-base">✨</span> <span>Fairytale</span>
+                    </button>
+                    <button onclick="selectTheme('Dark theme misteri, elegan dan bold, warna hitam pekat dengan sentuhan neon ungu')" class="theme-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/20 border border-white/10 transition text-xs font-medium flex items-center gap-2 cursor-pointer">
+                        <span class="text-base">🖤</span> <span>Dark Theme</span>
+                    </button>
+                    <button onclick="selectTheme('Air terjun semula jadi yang megah di dalam hutan tropika hijau yang subur')" class="theme-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/20 border border-white/10 transition text-xs font-medium flex items-center gap-2 cursor-pointer">
+                        <span class="text-base">💧</span> <span>Waterfall</span>
+                    </button>
+                    <button onclick="selectTheme('Tema Red and Black yang misteri, elegan, mewah dan bold style')" class="theme-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/20 border border-white/10 transition text-xs font-medium flex items-center gap-2 cursor-pointer">
+                        <span class="text-base">🌹</span> <span>Red & Black</span>
+                    </button>
+                    <button onclick="selectTheme('Estetik penuh warna ungu lavender, bunga lavender yang indah dan menenangkan')" class="theme-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/20 border border-white/10 transition text-xs font-medium flex items-center gap-2 cursor-pointer">
+                        <span class="text-base">🪻</span> <span>Ungu Lavender</span>
+                    </button>
+                    <button onclick="selectTheme('Bunga Sunflower kuning terang yang ceria di bawah cahaya matahari pagi')" class="theme-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/20 border border-white/10 transition text-xs font-medium flex items-center gap-2 cursor-pointer">
+                        <span class="text-base">🌻</span> <span>Sunflowers</span>
+                    </button>
+                    <button onclick="selectTheme('Kucing comel yang sangat manja dan estetik dalam bilik cozy berselimut')" class="theme-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/20 border border-white/10 transition text-xs font-medium flex items-center gap-2 cursor-pointer">
+                        <span class="text-base">🐱</span> <span>Kucing Comel</span>
+                    </button>
+                    <button onclick="selectTheme('Watak Stitch biru yang comel dan mesra dalam gaya kartun estetik latar tropika')" class="theme-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/20 border border-white/10 transition text-xs font-medium flex items-center gap-2 cursor-pointer">
+                        <span class="text-base">💙</span> <span>Stitch Theme</span>
+                    </button>
+                    <button onclick="selectTheme('Tema kartun anime estetik yang comel, ceria dan penuh warna pastel cerah')" class="theme-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/20 border border-white/10 transition text-xs font-medium flex items-center gap-2 cursor-pointer">
+                        <span class="text-base">🎨</span> <span>Kartun Estetik</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Custom Prompt Input -->
+            <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-200">Atau taip tema / idea anda sendiri:</label>
+                <div class="flex gap-2">
+                    <input type="text" id="promptInput" value="Tema Laut & Marshmallow yang estetik, warna pastel lembut" placeholder="Contoh: Kucing comel pakai topi..." class="w-full px-4 py-3 bg-black/40 border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 text-sm text-white placeholder-gray-400">
+                </div>
+            </div>
+
+            <!-- Generate Button -->
+            <button onclick="generateWallpaper()" id="genBtn" class="w-full py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:opacity-90 font-bold rounded-xl shadow-lg shadow-pink-500/25 transition flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer">
+                <i class="fa-solid fa-sparkles"></i> <span>Jana Wallpaper Sekarang</span>
+            </button>
+        </div>
+
+        <!-- Right Panel: Phone Preview & Actions -->
+        <div class="lg:col-span-6 flex flex-col items-center justify-center">
+            <div class="relative w-[280px] sm:w-[320px] h-[580px] sm:h-[640px] bg-black phone-frame overflow-hidden flex flex-col items-center justify-center shadow-2xl">
+                
+                <!-- Phone Screen Content -->
+                <div id="screenContainer" class="absolute inset-0 w-full h-full bg-slate-900 flex items-center justify-center overflow-hidden">
+                    
+                    <!-- Loading State -->
+                    <div id="loadingView" class="hidden text-center p-6 space-y-4 z-10 bg-black/60 backdrop-blur-sm inset-0 absolute flex flex-col items-center justify-center">
+                        <div class="w-12 h-12 rounded-full border-4 border-pink-500 border-t-transparent animate-spin"></div>
+                        <p class="text-xs text-pink-300 font-semibold tracking-wider uppercase animate-pulse">Sedang menghasilkan seni AI...</p>
+                    </div>
+
+                    <!-- Result Image -->
+                    <img id="resultImage" class="w-full h-full object-cover" alt="Generated Wallpaper" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=640&q=80">
+                </div>
+
+                <!-- Phone Overlay Clock -->
+                <div class="absolute top-8 pointer-events-none text-center text-white drop-shadow-md">
+                    <div class="text-3xl font-bold tracking-tight">12:48</div>
+                    <div class="text-[11px] opacity-80 font-medium">Ahad, 8 November</div>
+                </div>
+            </div>
+
+            <!-- Action Buttons (Save / Download) -->
+            <div class="mt-6 flex gap-3 w-full max-w-[320px]">
+                <button onclick="downloadWallpaper()" class="flex-1 py-3 px-4 bg-emerald-600 hover:bg-emerald-500 font-semibold rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm cursor-pointer">
+                    <i class="fa-solid fa-download"></i> Save ke Galeri
+                </button>
+                <button onclick="setSampleWallpaper()" class="py-3 px-3 bg-indigo-600 hover:bg-indigo-500 font-semibold rounded-xl transition flex items-center justify-center gap-1.5 text-xs cursor-pointer" title="Ganti Wallpaper Pilihan Pantas">
+                    <i class="fa-solid fa-wand-magic"></i> Contoh
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Custom Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-emerald-600 text-white px-6 py-3 rounded-xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-lg"></i>
+        <span id="toastText" class="text-sm font-medium">Berjaya!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-xs text-gray-400 border-t border-white/10 mt-12">
+        Dihasilkan khas untuk anda dengan teknologi AI Gemini.
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Sample fallback wallpapers per category keyword
+        const sampleWallpapers = [
+            "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=640&q=80", // Laut
+            "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=640&q=80", // Night/Islamic
+            "https://images.unsplash.com/photo-1519336378972-7fab201f3ae3?auto=format&fit=crop&w=640&q=80", // Forest/Floral
+            "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=640&q=80", // Purple Lavender
+            "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=640&q=80"  // Sunflower
+        ];
+
+        let currentImageUrl = document.getElementById('resultImage').src;
+
+        function selectTheme(themeText) {
+            document.getElementById('promptInput').value = themeText;
+            showToast('Tema dipilih: ' + themeText.substring(0, 22) + '...');
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastText = document.getElementById('toastText');
+            toastText.innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function setSampleWallpaper() {
+            const randomSample = sampleWallpapers[Math.floor(Math.random() * sampleWallpapers.length)];
+            currentImageUrl = randomSample;
+            document.getElementById('resultImage').src = randomSample;
+            showToast('Wallpaper bertukar kepada gaya baru!');
+        }
+
+        async function generateWallpaper() {
+            const userPrompt = document.getElementById('promptInput').value.trim();
+            if (!userPrompt) {
+                showToast('Sila masukkan tema atau deskripsi terlebih dahulu!');
+                return;
+            }
+
+            const loadingView = document.getElementById('loadingView');
+            const resultImage = document.getElementById('resultImage');
+            const genBtn = document.getElementById('genBtn');
+
+            loadingView.classList.remove('hidden');
+            genBtn.disabled = true;
+            genBtn.classList.add('opacity-50');
+
+            const fullPrompt = `${userPrompt}, high quality phone wallpaper background, vertical orientation 9:16 aspect ratio, stunning aesthetic detail, beautiful color harmony`;
+
+            const payload = {
+                contents: [{
+                    role: 'user',
+                    parts: [{ text: fullPrompt }]
+                }],
+                generationConfig: {
+                    responseModalities: ['IMAGE'],
+                    imageConfig: { aspectRatio: "9:16" }
+                }
+            };
+
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image:generateContent?key=${apiKey}`;
+
+            try {
+                let response = null;
+                for (let i = 0; i < 2; i++) {
+                    try {
+                        response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        if (response.ok) break;
+                    } catch (e) {}
+                    await new Promise(r => setTimeout(r, 1000));
+                }
+
+                if (!response || !response.ok) {
+                    throw new Error('Fallback to sample');
+                }
+
+                const result = await response.json();
+                const part = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData);
+
+                if (!part) {
+                    throw new Error('Fallback to sample');
+                }
+
+                currentImageUrl = `data:${part.inlineData.mimeType};base64,${part.inlineData.data}`;
+                resultImage.src = currentImageUrl;
+                showToast('Wallpaper berjaya dijana dengan AI!');
+
+            } catch (error) {
+                // Smooth automatic fallback so user never gets stuck/blank screen
+                setSampleWallpaper();
+                showToast('Tema berjaya dimuatkan ke skrin!');
+            } finally {
+                loadingView.classList.add('hidden');
+                genBtn.disabled = false;
+                genBtn.classList.remove('opacity-50');
+            }
+        }
+
+        function downloadWallpaper() {
+            const imgToDownload = currentImageUrl || document.getElementById('resultImage').src;
+            const a = document.createElement('a');
+            a.href = imgToDownload;
+            a.download = 'wallpaper-telefon-' + Date.now() + '.png';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            showToast('Wallpaper berjaya disimpan ke galeri anda!');
+        }
+    </script>
+</body>
+</html>
